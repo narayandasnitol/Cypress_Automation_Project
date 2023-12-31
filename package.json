@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "cypress": "^13.6.2",
+    "cypress-mochawesome-reporter": "^3.8.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0"
+  },
+  "scripts": {
+    "test": "cypress run --browser chrome",
+    "test:runner": "cypress run --browser chrome --spec cypress/e2e/PHPTravels/page_objects/runner.cy.js",
+    "generate:report": "marge cypress/reports/*.json -f report --reportDir cypress/reports",
+    "merge:reports": "mochawesome-merge cypress/reports/*.json > cypress/reports/mochareports.json"
+  }
+}
